@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+	<bean id="properties" class="ru.test.properties.PropWriter" init-method="init">
+		<property name="propFile" value="/properties/settings.properties"/>
+		<property name="prop" value="${testSheduler.cron}"/>
+	</bean>
+	
+	<bean id="testSheduler" class="org.springframework.scheduling.quartz.JobDetailBean">
+    	<property name="jobClass" value="ru.test.jobs.Sheduler" />
+	</bean>   
+	
+	<bean id="messageTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+	    <property name="jobDetail" ref="testSheduler" />
+	    <property name="cronExpression" value="${testSheduler.cron}" />
+	</bean>
+	
+	<bean id="shFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	  <property name="triggers">
+	    <list>
+	      <ref bean="messageTrigger"/>
+	    </list>
+	  </property>
+</bean> 
+</beans>
