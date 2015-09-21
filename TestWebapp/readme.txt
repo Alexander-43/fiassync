@@ -1,0 +1,1 @@
+http://codelea.com/q7g851MBdArE/rescheduling-quartz-at-runtime.html
