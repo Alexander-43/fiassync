@@ -7,6 +7,20 @@
   <version>1.0-SNAPSHOT</version>
   <name>TestWebapp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+   <repositories> 
+<!--    <repository>      -->
+<!--      <id>central</id>       -->
+<!--      <url>https://repo1.maven.apache.org/maven2</url>    -->
+<!--    </repository> -->
+<!--          <repository>      -->
+<!--      <id>central</id>       -->
+<!--      <url>https://repo1.maven.org/maven2</url>    -->
+<!--    </repository> -->
+      <repository>     
+     <id>alfresco-public</id>      
+     <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>   
+   </repository>
+ </repositories> 
 	<properties>
 		<jdk.version>1.7</jdk.version>
 		<spring.version>4.1.1.RELEASE</spring.version>
@@ -98,16 +112,11 @@
 			<version>2.3</version>
 			<scope>provided</scope>
 		</dependency>
-				
-	
-<dependency>
-	<groupId>org.apache.httpcomponents</groupId>
-	<artifactId>httpclient</artifactId>
-	<version>4.5</version>
-</dependency>
-
-	
-	
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5</version>
+		</dependency>
 		<dependency>
 		    <groupId>log4j</groupId>
 		    <artifactId>log4j</artifactId>
@@ -118,9 +127,41 @@
 	        <artifactId>commons-logging</artifactId>
 	        <version>1.1.1</version>
 		</dependency>
-
+		<!-- Web Scripts -->
+		<dependency>
+			<groupId>org.springframework.extensions.surf</groupId>
+			<artifactId>spring-webscripts</artifactId>
+			<version>1.0.0.M3</version>
+		</dependency>
+		
+		<!-- Web Scripts API -->
+		<dependency>
+			<groupId>org.springframework.extensions.surf</groupId>
+			<artifactId>spring-webscripts-api</artifactId>
+			<version>1.0.0.M3</version>
+		</dependency>
+		
+		<!-- Surf -->
+		<dependency>
+			<groupId>org.springframework.extensions.surf</groupId>
+			<artifactId>spring-surf</artifactId>
+			<version>1.0.0.M3</version>
+		</dependency>
+		
+		<!-- Surf API -->
+		<dependency>
+			<groupId>org.springframework.extensions.surf</groupId>
+			<artifactId>spring-surf-api</artifactId>
+			<version>1.0.0.M3</version>
+		</dependency>
+		
+		<!-- Third party dependencies -->
+		<dependency>
+			<groupId>org.tuckey</groupId>
+			<artifactId>urlrewritefilter</artifactId>
+			<version>3.1.0</version>						
+		</dependency>
 	</dependencies>
-
 	<build>
 		<finalName>TestWebapp</finalName>
 
@@ -159,6 +200,7 @@
 				<path>/TestWebapp</path>
 			</configuration>
 		  </plugin>
+
 
 		</plugins>
 

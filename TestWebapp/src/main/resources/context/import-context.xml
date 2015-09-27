@@ -27,5 +27,10 @@
 	      <ref bean="messageTrigger"/>
 	    </list>
 	  </property>
-</bean> 
+	</bean> 
+
+	<bean id="webscript.webscripts.javaws.javaws.get" 
+	      class="ru.test.webscripts.TestwsGet" 
+	      parent="webscript">
+	</bean>
 </beans>

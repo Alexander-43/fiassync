@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<page>
+   <title>Home page test</title>
+   <title-id>page.home.title</title-id>
+   <description>Home page test</description>
+   <description-id>page.home.description</description-id>
+   <template-instance>home</template-instance>
+   <authentication>none</authentication>
+</page>

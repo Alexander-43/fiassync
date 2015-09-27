@@ -1,0 +1,1 @@
+model.text = "Footer text";
