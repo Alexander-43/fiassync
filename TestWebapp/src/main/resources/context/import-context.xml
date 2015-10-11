@@ -19,9 +19,10 @@
 	<bean id="messageTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
 	    <property name="jobDetail" ref="testSheduler" />
 	    <property name="cronExpression" value="${testSheduler.cron}" />
+	    <property name="name" value="messageTrigger"/>
 	</bean>
 	
-	<bean id="shFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	<bean id="shFactoryBean" class="ru.test.jobs.SchedulerServiceImpl" init-method="init" destroy-method="destroy">
 	  <property name="triggers">
 	    <list>
 	      <ref bean="messageTrigger"/>
@@ -32,5 +33,6 @@
 	<bean id="webscript.webscripts.javaws.javaws.get" 
 	      class="ru.test.webscripts.TestwsGet" 
 	      parent="webscript">
+	      <property name="service" ref="shFactoryBean" />
 	</bean>
 </beans>
