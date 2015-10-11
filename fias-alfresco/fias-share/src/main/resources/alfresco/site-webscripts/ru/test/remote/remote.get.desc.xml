@@ -1,0 +1,5 @@
+<webscript>
+  <shortname>remote</shortname>
+  <description>remote</description>
+  <url>/api/remote</url>
+</webscript>

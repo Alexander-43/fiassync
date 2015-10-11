@@ -1,28 +1,30 @@
 package ru.test.webscripts;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.quartz.Scheduler;
-import org.springframework.extensions.webscripts.AbstractWebScript;
+import org.springframework.extensions.webscripts.Cache;
+import org.springframework.extensions.webscripts.DeclarativeWebScript;
 import org.springframework.extensions.webscripts.WebScriptRequest;
 import org.springframework.extensions.webscripts.WebScriptResponse;
 
 import ru.test.jobs.SchedulerServiceImpl;
 
-public class TestwsGet extends AbstractWebScript {
+public class TestwsGet extends DeclarativeWebScript {
 
 	public static Logger logger = Logger.getLogger(TestwsGet.class);
 	
 	private SchedulerServiceImpl service;
 	
-	@Override
-	public void execute(WebScriptRequest req, WebScriptResponse res) throws IOException {
+	public Map<String, Object> executeImpl(WebScriptRequest req, WebScriptResponse res, Cache cache) throws IOException {
 		// TODO Auto-generated method stub
 		logger.debug("Try to reschedule ... ");
-		service.reschedule("messageTrigger", "0 0/3 * * * ? *");
-		res.getWriter().write("Text from java webscript");
+		//service.reschedule("messageTrigger", "0 0/3 * * * ? *");
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("res", "Just a test");
+		return map;
 	}
 
 	public void setService(SchedulerServiceImpl service) {

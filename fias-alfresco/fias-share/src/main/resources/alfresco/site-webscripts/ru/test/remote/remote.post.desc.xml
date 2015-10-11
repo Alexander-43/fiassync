@@ -1,0 +1,6 @@
+<webscript>
+  <shortname>remote</shortname>
+  <description>remote</description>
+  <format default="json">argument</format>
+  <url>/api/remote/post</url>
+</webscript>

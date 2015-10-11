@@ -1,0 +1,16 @@
+<!-- This is a sample configuration file from Alfresco Community 4.2.b - Please adapt to your version -->
+<alfresco-config>
+   <config evaluator="string-compare" condition="Remote">
+      <remote>
+		<endpoint>
+            <id>fias</id>
+            <name>Fias application</name>
+            <description>Fias application</description>
+            <connector-id>http</connector-id>
+            <endpoint-url>http://admin-PK:8180/TestWebapp/service</endpoint-url>
+            <identity>none</identity>
+         </endpoint>         
+      </remote>
+   </config>
+   
+</alfresco-config>

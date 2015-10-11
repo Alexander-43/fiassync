@@ -1,0 +1,5 @@
+<webscript>
+  <shortname>Test JS WS</shortname>
+  <description>Test webscript on javascript</description>
+  <url>/javaws/post</url>
+</webscript>
